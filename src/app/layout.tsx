@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Syne, JetBrains_Mono } from "next/font/google";
+import { Outfit, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -23,7 +23,10 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Lee Seaver — Full-Stack & AI Integration Engineer",
   description:
-    "Portfolio of Lee Seaver. 30+ shipped projects across SaaS, e-commerce, mobile, and AI. Live demos at leeseaver.com.",
+    "30+ shipped projects across SaaS, e-commerce, mobile, and AI. Production systems tied to real revenue.",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Lee Seaver — Full-Stack & AI Integration Engineer",
     description:
@@ -47,9 +50,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${jakarta.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${outfit.variable} ${dmSans.variable} ${jetbrains.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body">{children}</body>
+      <body className="font-body">{children}</body>
     </html>
   );
 }

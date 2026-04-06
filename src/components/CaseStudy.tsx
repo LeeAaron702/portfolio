@@ -1,184 +1,175 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
+import TechIcon from "./TechIcon";
 
 const STATS = [
-  { value: "1,200+", label: "Products Listed" },
-  { value: "95%", label: "Lighthouse Score" },
-  { value: "SEO", label: "Blog Pipeline" },
-  { value: "Full", label: "Merchant Feeds" },
+  { value: "1,200+", label: "Products Indexed", color: "var(--color-accent-warm)" },
+  { value: "GA4", label: "Analytics & Tracking", color: "var(--color-accent)" },
+  { value: "SEO", label: "Optimized for Search", color: "var(--color-accent-warm)" },
+  { value: "Ads", label: "Ready for Paid", color: "var(--color-accent)" },
 ];
 
-const FEATURES = [
-  "Custom e-commerce frontend with category browsing, search, and filtering across 1,200+ remanufactured parts",
-  "SEO-optimized slug URLs for every product and category page \u2014 built for organic Google traffic",
-  "Automated blog content pipeline generating keyword-targeted posts for long-tail search capture",
-  "Google Merchant Center product feeds syncing the full catalog for Shopping ads",
-  "Full analytics stack \u2014 Google Analytics 4 + Google Tag Manager for conversion tracking",
-  "Cart abandonment recovery system to recapture lost sales",
+const BUILT = [
+  "Full SEO overhaul — structured URLs, metadata, and sitemap for every product and category",
+  "Automated blog content pipeline to capture long-tail search traffic",
+  "Google Analytics (GA4) + Tag Manager setup for conversion tracking",
+  "Google Merchant Center product feeds for Shopping ad campaigns",
+  "Cart abandonment email recovery system",
+  "Product catalog search and filtering across 1,200+ parts",
 ];
 
 export default function CaseStudy() {
-  const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
   return (
-    <section id="experience" ref={ref} className="py-24 md:py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-0">
+      {/* Full-bleed accent background */}
+      <div className="case-study-bg">
         <div
-          className={`transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className="relative"
+          style={{
+            borderTop: "1px solid var(--color-border)",
+            borderBottom: "1px solid var(--color-border)",
+          }}
         >
-          <span className="font-mono text-xs font-medium tracking-widest uppercase text-blue">
-            03 / Case Study
-          </span>
-        </div>
-
-        <div
-          className={`mt-8 glass-card rounded-3xl overflow-hidden transition-all duration-700 delay-100 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ cursor: "default" }}
-          onMouseEnter={() => {}}
-        >
-          {/* Header gradient */}
-          <div
-            className="px-8 md:px-12 py-10 md:py-14"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(6,182,212,0.06) 100%)",
-            }}
-          >
-            <span
-              className="inline-block text-xs font-mono font-medium tracking-widest uppercase px-3 py-1 rounded-full mb-4"
-              style={{
-                background: "rgba(37,99,235,0.1)",
-                color: "var(--color-blue)",
-              }}
-            >
-              Client Work
-            </span>
-            <h3
-              className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-2"
-              style={{ color: "var(--color-navy)" }}
-            >
-              score-auto-parts
-            </h3>
-            <p className="text-lg" style={{ color: "var(--color-slate)" }}>
-              B2C E-Commerce for Remanufactured Auto Parts
-            </p>
-          </div>
-
-          <div className="px-8 md:px-12 py-10 md:py-12">
-            {/* Stats row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-              {STATS.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={`text-center p-4 rounded-xl transition-all duration-700 ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
-                  style={{
-                    background: "var(--color-ice)",
-                    border: "1px solid var(--color-border)",
-                    transitionDelay: `${300 + i * 80}ms`,
-                  }}
+          <div className="section-padding px-6">
+            <div className="max-w-[1200px] mx-auto">
+              <ScrollReveal animation="fade-right">
+                <span
+                  className="font-mono text-xs tracking-widest uppercase"
+                  style={{ color: "var(--color-accent-warm)" }}
                 >
-                  <div className="font-display text-2xl font-bold gradient-accent-text">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs font-medium uppercase tracking-wider text-slate mt-1">
-                    {stat.label}
+                  Ongoing Project
+                </span>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.1} animation="fade-right">
+                <div className="mt-6 flex items-center gap-5">
+                  <Image
+                    src="/score-auto-parts-logo.png"
+                    alt="Score Auto Parts logo"
+                    width={200}
+                    height={80}
+                    className="h-14 w-auto object-contain"
+                  />
+                  <div>
+                    <h2
+                      className="font-display text-3xl md:text-5xl font-bold tracking-tight"
+                      style={{ color: "var(--color-text-primary)" }}
+                    >
+                      Score Auto Parts
+                    </h2>
+                    <p
+                      className="mt-1 text-lg"
+                      style={{ color: "var(--color-text-secondary)" }}
+                    >
+                      B2C e-commerce for remanufactured auto parts — actively building and maintaining
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </ScrollReveal>
 
-            {/* Problem */}
-            <div className="mb-10">
-              <h4
-                className="font-display text-sm font-bold uppercase tracking-widest mb-4"
-                style={{ color: "var(--color-navy-muted)" }}
-              >
-                The Problem
-              </h4>
-              <p className="text-base leading-relaxed" style={{ color: "var(--color-slate)" }}>
-                Score Auto Parts needed a modern storefront to sell
-                remanufactured auto parts direct to consumers. The existing
-                setup had no SEO presence, no structured catalog, and no
-                scalable way to list 1,200+ parts with proper categorization.
-              </p>
-            </div>
-
-            {/* Solution */}
-            <div className="mb-10">
-              <h4
-                className="font-display text-sm font-bold uppercase tracking-widest mb-4"
-                style={{ color: "var(--color-navy-muted)" }}
-              >
-                What I Built
-              </h4>
-              <ul className="space-y-3">
-                {FEATURES.map((f, i) => (
-                  <li
-                    key={i}
-                    className={`flex items-start gap-3 text-base leading-relaxed transition-all duration-500 ${
-                      visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-                    }`}
-                    style={{
-                      color: "var(--color-slate)",
-                      transitionDelay: `${500 + i * 60}ms`,
-                    }}
-                  >
-                    <svg
-                      className="mt-1.5 shrink-0"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#2563EB"
-                      strokeWidth="3"
+              {/* Stats — large, with color accents */}
+              <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8">
+                {STATS.map((stat, i) => (
+                  <ScrollReveal key={stat.label} delay={0.15 + i * 0.08} animation="scale-up">
+                    <div
+                      className="rounded-xl p-5"
+                      style={{
+                        background: "rgba(255,255,255,0.02)",
+                        border: "1px solid var(--color-border)",
+                      }}
                     >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    {f}
-                  </li>
+                      <div
+                        className="font-display text-4xl md:text-5xl font-bold"
+                        style={{ color: stat.color }}
+                      >
+                        {stat.value}
+                      </div>
+                      <div
+                        className="mt-2 font-mono text-xs tracking-wider uppercase"
+                        style={{ color: "var(--color-text-tertiary)" }}
+                      >
+                        {stat.label}
+                      </div>
+                    </div>
+                  </ScrollReveal>
                 ))}
-              </ul>
-            </div>
+              </div>
 
-            {/* Tech */}
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Next.js",
-                "Tailwind CSS",
-                "PostgreSQL",
-                "Google Merchant API",
-                "GA4",
-                "GTM",
-                "Stripe",
-              ].map((t) => (
-                <span key={t} className="tech-badge">
-                  {t}
-                </span>
-              ))}
+              <div className="mt-16 grid md:grid-cols-2 gap-14">
+                {/* Problem */}
+                <ScrollReveal delay={0.2} animation="fade-left">
+                  <div>
+                    <h3
+                      className="font-mono text-xs tracking-widest uppercase mb-4"
+                      style={{ color: "var(--color-accent-warm)" }}
+                    >
+                      The Problem
+                    </h3>
+                    <p
+                      className="text-base leading-relaxed"
+                      style={{
+                        color: "var(--color-text-secondary)",
+                        lineHeight: 1.8,
+                      }}
+                    >
+                      Score Auto Parts sells remanufactured parts direct to
+                      consumers. When I came on, there was no analytics, no
+                      SEO, no ad infrastructure — nothing in place to actually
+                      drive traffic or measure what was working.
+                    </p>
+                  </div>
+                </ScrollReveal>
+
+                {/* Solution */}
+                <ScrollReveal delay={0.3} animation="fade-right">
+                  <div>
+                    <h3
+                      className="font-mono text-xs tracking-widest uppercase mb-4"
+                      style={{ color: "var(--color-accent-warm)" }}
+                    >
+                      What I&apos;ve Built So Far
+                    </h3>
+                    <ul className="space-y-3">
+                      {BUILT.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-sm"
+                          style={{
+                            color: "var(--color-text-secondary)",
+                            lineHeight: 1.7,
+                          }}
+                        >
+                          <span
+                            className="mt-2 block w-1.5 h-1.5 rounded-full shrink-0"
+                            style={{ background: "var(--color-accent-warm)" }}
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+              {/* Tech */}
+              <ScrollReveal delay={0.3} animation="fade-up">
+                <div className="mt-10 flex flex-wrap gap-1.5">
+                  {[
+                    "GA4",
+                    "GTM",
+                    "Google Merchant API",
+                    "Python",
+                    "Stripe",
+                  ].map((t) => (
+                    <TechIcon key={t} name={t} />
+                  ))}
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
-
-        <div className="section-divider mt-24" />
       </div>
     </section>
   );

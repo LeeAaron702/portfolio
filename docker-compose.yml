@@ -6,4 +6,5 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - CONTACT_EMAIL=Lee.Seaver@gmail.com
+      - TELEGRAM_BOT_TOKEN=8658003214:AAFJykQiREH5G2AYPZkzjB7O38wglOXm618
+      - TELEGRAM_CHAT_ID=7615070484

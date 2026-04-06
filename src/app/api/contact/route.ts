@@ -1,5 +1,4 @@
 import { NextRequest } from "next/server";
-import nodemailer from "nodemailer";
 
 // Simple in-memory rate limiting per IP
 const submissions = new Map<string, number>();
@@ -25,7 +24,6 @@ export async function POST(request: NextRequest) {
 
     // Honeypot — if filled, it's a bot
     if (honeypot) {
-      // Pretend success
       return Response.json({ success: true });
     }
 
@@ -53,29 +51,30 @@ export async function POST(request: NextRequest) {
     // Record submission time for rate limiting
     submissions.set(ip, Date.now());
 
-    // Send email if SMTP is configured
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const contactEmail = process.env.CONTACT_EMAIL || "Lee.Seaver@gmail.com";
+    // Send Telegram notification
+    const botToken = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    if (smtpUser && smtpPass) {
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: smtpUser,
-          pass: smtpPass,
-        },
-      });
+    const text = `📬 *Portfolio Contact*\n\n*Name:* ${name}\n*Email:* ${email}\n\n${message}`;
 
-      await transporter.sendMail({
-        from: `"Portfolio Contact" <${smtpUser}>`,
-        to: contactEmail,
-        replyTo: email,
-        subject: `Portfolio message from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-      });
+    if (botToken && chatId) {
+      const res = await fetch(
+        `https://api.telegram.org/bot${botToken}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text,
+            parse_mode: "Markdown",
+          }),
+        }
+      );
+
+      if (!res.ok) {
+        console.error("Telegram send failed:", await res.text());
+      }
     } else {
-      // No SMTP configured — log to stdout so Docker logs capture it
       console.log("--- CONTACT FORM SUBMISSION ---");
       console.log(`Name: ${name}`);
       console.log(`Email: ${email}`);

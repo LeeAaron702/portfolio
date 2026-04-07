@@ -46,7 +46,7 @@ export default function CaseStudy() {
               <ScrollReveal delay={0.1} animation="fade-right">
                 <div className="mt-6 flex items-center gap-5">
                   <Image
-                    src="/score-auto-parts-logo.png"
+                    src="/score-auto-parts-logo.jpg"
                     alt="Score Auto Parts logo"
                     width={200}
                     height={80}

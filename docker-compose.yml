@@ -6,5 +6,5 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - TELEGRAM_BOT_TOKEN=8658003214:AAFJykQiREH5G2AYPZkzjB7O38wglOXm618
-      - TELEGRAM_CHAT_ID=7615070484
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}

@@ -37,11 +37,10 @@ export default function About() {
                 lineHeight: 1.8,
               }}
             >
-              Full-stack developer in Las Vegas. From OCR SaaS to iOS apps to
-              real-time monitoring systems, I build the whole stack and put it in
-              production. Hack Reactor &apos;23. I deploy on my own
-              infrastructure and manage the full lifecycle — architecture to
-              monitoring.
+              Full-stack developer in Las Vegas, Hack Reactor &apos;23. I build
+              e-commerce platforms, OCR pipelines, prediction market bots, and
+              real-time monitoring systems — then deploy and run them on my own
+              infrastructure.
             </p>
           </ScrollReveal>
         </div>

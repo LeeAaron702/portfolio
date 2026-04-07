@@ -56,12 +56,21 @@ export default function ClientWork() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1} animation="fade-left">
-          <h2
-            className="mt-6 font-display text-3xl md:text-4xl font-bold tracking-tight"
-            style={{ color: "var(--color-text-primary)" }}
-          >
-            Hidden Blueprint Clients
-          </h2>
+          <div className="mt-6 flex items-center gap-4">
+            <Image
+              src="/hidden-blueprint-logo-new.svg"
+              alt="Hidden Blueprint logo"
+              width={40}
+              height={32}
+              className="h-8 w-auto object-contain"
+            />
+            <h2
+              className="font-display text-3xl md:text-4xl font-bold tracking-tight"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              Hidden Blueprint Clients
+            </h2>
+          </div>
           <p
             className="mt-2 text-base"
             style={{ color: "var(--color-text-secondary)" }}

@@ -92,11 +92,6 @@ const MORE_PROJECTS = [
     url: null,
   },
   {
-    name: "Typhon",
-    desc: "Media processing — Whisper + GPT-4 Vision pipeline",
-    url: "https://github.com/LeeAaron702/Typhon",
-  },
-  {
     name: "PouchPal",
     desc: "iOS finance app — App Store, widgets, Siri",
     url: null,

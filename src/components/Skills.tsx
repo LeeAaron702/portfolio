@@ -49,7 +49,7 @@ export default function Skills() {
                 }}
               >
                 <h3
-                  className="font-mono text-xs tracking-widest uppercase mb-5 pb-3"
+                  className="font-mono text-sm md:text-base tracking-widest uppercase mb-5 pb-3"
                   style={{
                     color: col.accent,
                     borderBottom: `1px solid ${col.accent}33`,

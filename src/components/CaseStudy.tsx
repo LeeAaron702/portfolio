@@ -5,19 +5,19 @@ import ScrollReveal from "./ScrollReveal";
 import TechIcon from "./TechIcon";
 
 const STATS = [
-  { value: "1,200+", label: "Products Indexed", color: "var(--color-accent-warm)" },
-  { value: "GA4", label: "Analytics & Tracking", color: "var(--color-accent)" },
-  { value: "SEO", label: "Optimized for Search", color: "var(--color-accent-warm)" },
-  { value: "Ads", label: "Ready for Paid", color: "var(--color-accent)" },
+  { value: "Feed", label: "Google Merchant Center", color: "var(--color-accent-warm)" },
+  { value: "GA4+GTM", label: "Analytics & Tracking", color: "var(--color-accent)" },
+  { value: "SEO", label: "Search Optimized", color: "var(--color-accent-warm)" },
+  { value: "AEO", label: "LLM Search Ready", color: "var(--color-accent)" },
 ];
 
 const BUILT = [
   "Full SEO overhaul — structured URLs, metadata, and sitemap for every product and category",
-  "Automated blog content pipeline to capture long-tail search traffic",
   "Google Analytics (GA4) + Tag Manager setup for conversion tracking",
   "Google Merchant Center product feeds for Shopping ad campaigns",
-  "Cart abandonment email recovery system",
   "Product catalog search and filtering across 1,200+ parts",
+  "Answer engine optimization (AEO) for LLM search visibility — in progress",
+  "Cart abandonment email recovery system — coming soon",
 ];
 
 export default function CaseStudy() {

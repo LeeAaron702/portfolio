@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const JOBS = [
   {
     company: "Inside Edge",
     url: "https://www.inside-edge.com",
+    logo: null as string | null,
     role: "Software Developer & Data Analyst (Contract)",
     period: "Apr 2026 — Present",
     bullets: [
@@ -17,18 +19,22 @@ const JOBS = [
   {
     company: "Hidden Blueprint",
     url: "https://www.hiddenblueprint.com",
+    logo: "/hidden-blueprint-logo-new.svg",
+    logoDark: true,
     role: "VP of Engineering & Software Development",
     period: "May 2023 — Present",
     bullets: [
-      "Built Typhon, a media processing pipeline using Whisper + GPT-4 Vision that automated 3-4 hours of manual content repurposing per piece",
+      "Ran the GoHighLevel CRM — built all marketing automations, lead nurturing workflows, and client onboarding sequences",
       "Developed a conversational Voice AI demo with ElevenLabs + React for live client demonstrations",
-      "Built and maintain internal tools for content scheduling, analytics, and client reporting",
-      "Manage full deployment lifecycle: Docker, CI/CD, Cloudflare DNS/SSL, dedicated infrastructure",
+      "Served as both marketing automation specialist and developer — bridging strategy and technical implementation across all client accounts",
+      "Managed deployment lifecycle: Docker, CI/CD, Cloudflare DNS/SSL, dedicated infrastructure",
     ],
   },
   {
     company: "Professor Color",
     url: "https://www.professorcolor.com",
+    logo: "/professor-color-logo.jpg",
+    logoDark: false,
     role: "Software Engineer & Automation Lead",
     period: "Sept 2020 — Present",
     bullets: [
@@ -41,6 +47,8 @@ const JOBS = [
   {
     company: "Detailers of Las Vegas",
     url: null,
+    logo: "/detailers-of-las-vegas-logo.webp",
+    logoDark: false,
     role: "Operations Manager",
     period: "2018 — 2020",
     bullets: [
@@ -83,6 +91,27 @@ export default function Experience() {
                     className="absolute -left-[5px] top-1 w-2 h-2 rounded-full"
                     style={{ background: "var(--color-accent-warm)" }}
                   />
+                )}
+                {job.logo && (
+                  <div
+                    className="mb-4 inline-block rounded-lg overflow-hidden"
+                    style={
+                      job.logoDark
+                        ? {}
+                        : {
+                            background: "rgba(255,255,255,0.95)",
+                            padding: "6px 10px",
+                          }
+                    }
+                  >
+                    <Image
+                      src={job.logo}
+                      alt={`${job.company} logo`}
+                      width={120}
+                      height={48}
+                      className="h-10 w-auto object-contain"
+                    />
+                  </div>
                 )}
                 <div className="flex flex-wrap items-baseline gap-3">
                   <h3

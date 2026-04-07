@@ -137,7 +137,7 @@ export default function Hero() {
         >
           <div ref={photoImgRef} className="w-full h-full">
             <Image
-              src="/lee-hero.png"
+              src="/lee-hero.jpg"
               alt="Lee Seaver"
               fill
               className="object-cover object-top"

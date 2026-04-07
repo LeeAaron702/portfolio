@@ -14,7 +14,7 @@ const CASE_STUDIES = [
       { value: "5,000+", label: "Monthly Visitors" },
       { value: "$25", label: "Cost / Ticket" },
     ],
-    screenshot: "/screenshots/breathe-convention.png",
+    screenshot: "/screenshots/breathe-convention.jpg",
   },
   {
     client: "BioHarmonic Technologies",
@@ -26,7 +26,7 @@ const CASE_STUDIES = [
       { value: "$44K", label: "Email Revenue" },
       { value: "+87%", label: "Database Growth" },
     ],
-    screenshot: "/screenshots/bioharmonic.png",
+    screenshot: "/screenshots/bioharmonic.jpg",
   },
   {
     client: "Chezaray Photography",
@@ -38,7 +38,7 @@ const CASE_STUDIES = [
       { value: "SEO", label: "Optimized" },
       { value: "Ads", label: "Google / Meta" },
     ],
-    screenshot: "/screenshots/chezaray.png",
+    screenshot: "/screenshots/chezaray.jpg",
   },
 ];
 

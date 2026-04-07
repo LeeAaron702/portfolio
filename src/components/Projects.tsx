@@ -22,8 +22,8 @@ const HERO_PROJECTS: Project[] = [
       "Real-time price monitoring for toner arbitrage. Tracks hundreds of listings, calculates profit margins, and sends Telegram alerts with matched Amazon listings and profit calculations.",
     tech: ["Python", "eBay API", "PostgreSQL", "FastAPI"],
     screenshots: [
-      "/screenshots/ebay-monitor-2.png",
-      "/screenshots/ebay-monitor-3.png",
+      "/screenshots/ebay-monitor-2.jpg",
+      "/screenshots/ebay-monitor-3.jpg",
     ],
     githubUrl: "https://github.com/LeeAaron702/ebay-arbitrage-monitor",
   },
@@ -32,7 +32,7 @@ const HERO_PROJECTS: Project[] = [
     description:
       "Telegram SaaS for eBay arbitrage. Real-time profit alerts and subscription billing. Scans live listings, calculates margins, sends instant Telegram notifications.",
     tech: ["FastAPI", "Telegram API", "eBay API", "Stripe", "PostgreSQL"],
-    screenshot: "/screenshots/resellpilot.png",
+    screenshot: "/screenshots/resellpilot.jpg",
     liveUrl: "https://resellpilot.leeseaver.com",
     githubUrl: "https://github.com/LeeAaron702/ResellPilot",
   },
@@ -45,7 +45,7 @@ const GRID_PROJECTS: Project[] = [
     description:
       "AI workspace for notes. Organize by project, ask AI questions about everything you've written.",
     tech: ["React", "Node.js", "MongoDB", "Ollama"],
-    screenshot: "/screenshots/chronos-dashboard.png",
+    screenshot: "/screenshots/chronos-dashboard.jpg",
     liveUrl: "https://chronos.leeseaver.com",
   },
   {
@@ -53,7 +53,7 @@ const GRID_PROJECTS: Project[] = [
     description:
       "OCR shipping label scanner — photograph a label, get structured data back. Stripe metered billing.",
     tech: ["FastAPI", "React", "GPT-4o", "Stripe", "PostgreSQL"],
-    screenshot: "/screenshots/parcels.png",
+    screenshot: "/screenshots/parcels.jpg",
     liveUrl: "https://parcels.leeseaver.com",
     githubUrl: "https://github.com/LeeAaron702/ParcelParse",
   },
@@ -62,7 +62,7 @@ const GRID_PROJECTS: Project[] = [
     description:
       "Camping legality checker. Cross-references federal land data with your GPS coordinates.",
     tech: ["React", "Node.js", "PostgreSQL"],
-    screenshot: "/screenshots/camping.png",
+    screenshot: "/screenshots/camping.jpg",
     liveUrl: "https://camping.leeseaver.com",
   },
   {
@@ -70,7 +70,7 @@ const GRID_PROJECTS: Project[] = [
     description:
       "Paste an Instagram Reel URL, get content analysis, hook breakdowns, and engagement predictions.",
     tech: ["React", "FastAPI", "GPT-4o", "Whisper"],
-    screenshot: "/screenshots/reels.png",
+    screenshot: "/screenshots/reels.jpg",
     liveUrl: "https://reels.leeseaver.com",
   },
 ];

@@ -26,7 +26,7 @@ export default function Hero() {
     tl.fromTo(
       meshWrapRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 1.8, ease: "power2.out" }
+      { opacity: 1, duration: 1.0, ease: "power2.out" }
     )
       // Photo: clip-path reveal from bottom + slight scale
       .fromTo(

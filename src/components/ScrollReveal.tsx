@@ -48,7 +48,7 @@ export default function ScrollReveal({
   children,
   className = "",
   delay = 0,
-  duration = 0.8,
+  duration = 0.5,
   animation = "fade-up",
 }: {
   children: React.ReactNode;

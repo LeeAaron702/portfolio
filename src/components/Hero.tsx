@@ -20,7 +20,7 @@ export default function Hero() {
   const meshWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.1 });
+    const tl = gsap.timeline({ delay: 0 });
 
     // Mesh fades in first
     tl.fromTo(
@@ -34,10 +34,10 @@ export default function Hero() {
         { clipPath: "inset(100% 0% 0% 0%)" },
         {
           clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1.2,
+          duration: 0.5,
           ease: "power4.inOut",
         },
-        0.3
+        0.1
       )
       .fromTo(
         photoImgRef.current,

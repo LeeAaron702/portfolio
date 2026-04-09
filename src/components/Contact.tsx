@@ -76,9 +76,8 @@ export default function Contact() {
                   lineHeight: 1.7,
                 }}
               >
-                I build full-stack apps, AI integrations, e-commerce platforms,
-                and automation systems. If you have a project, I&apos;d like to
-                hear about it.
+                I turn manual work into software. If you have a project,
+                I&apos;d like to hear about it.
               </p>
             </ScrollReveal>
 

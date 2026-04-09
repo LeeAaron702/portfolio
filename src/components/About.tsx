@@ -37,10 +37,12 @@ export default function About() {
                 lineHeight: 1.8,
               }}
             >
-              Full-stack developer in Las Vegas, Hack Reactor &apos;23. I build
-              e-commerce platforms, OCR pipelines, prediction market bots, and
-              real-time monitoring systems — then deploy and run them on my own
-              infrastructure.
+              I started writing code to solve problems no one had built a
+              solution for yet. Now I turn manual work into software. I build
+              it. I deploy it. I run it.
+              <br />
+              <br />
+              Full-stack developer. Las Vegas. Hack Reactor &apos;23.
             </p>
           </ScrollReveal>
         </div>
